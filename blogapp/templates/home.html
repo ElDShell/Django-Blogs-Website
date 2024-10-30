@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row tm-row">
+    {% for blog in blogs %}
+    <article class="col-12 col-md-6 tm-post">
+        <hr class="tm-hr-primary">
+        <a href="{% url 'blog_detail' blog.id %}" class="effect-lily tm-post-link tm-pt-60">
+            <div class="tm-post-link-inner">
+                <div class="image-wrapper">
+                    <img src="{{ blog.image.url }}" alt="Image" class="img-fluid fixed-image blog-image">              
+                </div>
+            </div>
+            {% if blog.is_new  %}
+            <span class="position-absolute tm-new-badge">New</span>
+            {% endif %}
+            <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{blog.title}}</h2>
+        </a>                    
+        <p class="tm-pt-30">{{blog.content}} </p>
+        <div class="d-flex justify-content-between tm-pt-45">
+            <span class="tm-color-primary">Travel . Events</span>
+            <span class="tm-color-primary">{{blog.created_at|date:'M d/Y'}}</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+            <span>Number of Comments : {{blog.comments_num}}</span>
+            <span>By {{blog.author}}</span>
+        </div>
+    </article>
+    
+    {% endfor %}
+</div>
+
+<div class="row tm-row tm-mt-100 tm-mb-75">
+    <div class="tm-prev-next-wrapper">
+        <a href="{% if blogs.has_previous %}?page={{ blogs.previous_page_number }}{% else %}#{% endif %}" class="mb-2 tm-btn tm-btn-primary tm-prev-next {% if not blogs.has_previous %}disabled{% endif %} tm-mr-20">Prev</a>
+        <a href="{% if blogs.has_next %}?page={{ blogs.next_page_number }}{% else %}#{% endif %}" class="mb-2 tm-btn tm-btn-primary tm-prev-next {% if not blogs.has_next %}disabled{% endif %} ">Next</a>
+    </div>
+    <div class="tm-paging-wrapper">
+        <span class="d-inline-block mr-3">Page</span>
+        <nav class="tm-paging-nav d-inline-block">
+            <ul>
+                {% for blog_num in blogs.paginator.page_range %}
+                    <li class="tm-paging-item {% if blog_num == blogs.number %}active{% endif %}">
+                        <a href="?page={{blog_num}}" class="mb-2 tm-btn tm-paging-link">{{blog_num}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>                
+</div>  
+
+{% endblock content %}

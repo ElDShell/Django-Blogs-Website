@@ -1,0 +1,47 @@
+.profile-img-container {
+    position: relative; /* Position relative for absolute positioning of the edit icon */
+    display: inline-block; /* Adjust as necessary for layout */
+}
+
+.profile-img {
+    transition: filter 0.3ms ease;
+}
+
+/* Apply brightness change when hovering over the container */
+.profile-img-container:hover .profile-img {
+    filter: brightness(70%);
+}
+
+.profile-img-container:hover .edit-icon {
+    display: block; /* Show the icon on hover of the entire container */
+}
+.edit-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white; /* Icon color */
+    background-color: rgba(0, 123, 255, 0.7); /* Blue background with transparency */
+    padding: 10px;
+    border-radius: 50%; /* Make it circular */
+    display: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+/* Change background color on hover */
+.edit-icon:hover {
+    background-color: rgba(0, 105, 217, 0.9); /* Darker blue on hover */
+    transform: translate(-50%, -50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Optionally, add a smooth transition for the icon size */
+.edit-icon i {
+    transition: transform 0.3s ease; /* Smooth transition for icon */
+}
+
+/* Scale icon on hover */
+.edit-icon:hover i {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}

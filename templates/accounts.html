@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"> <!-- https://fontawesome.com/ -->
+        <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"> <!-- https://fontawesome.com/ -->
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link href="{% static 'css/templatemo-xtra-blog.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src='https://cdn.tailwindcss.com'></script>
+    </head>
+    <body>
+        <!-- messages -->
+        {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show text-center" id="alert" role="alert">
+                <strong>{{message.tags|title}}!!!</strong> {{message}}
+                <button type="button" id="close" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <script>
+                document.getElementById("close").onclick = function() {
+                    document.getElementById("alert").style.display = "none";
+                };
+                setTimeout(function() {
+                    const message = document.getElementById('alert');
+                    if (message) {
+                        message.style.display = 'none';
+                    }
+                }, 3000);                
+            </script>
+        {% endfor %}
+        {% block content %}
+
+        {% endblock content %}
+        {% block scripts %}
+        
+        {% endblock scripts %}
+    </body>
+</html>

@@ -1,0 +1,100 @@
+.image-container{
+    position: relative;
+    display: inline-block;
+}
+#blog_img{
+    transition: filter 0.3ms ease;
+}
+#blog_img:hover{
+    filter: brightness(70%)
+}
+/* Apply the brightness effect on hover of the container */
+.image-container:hover #blog_img {
+    filter: brightness(70%);
+}
+
+.edit-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 24px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 60%;
+    display: none;
+    transition: all 0.3 s ease ;
+}
+.image-container:hover .edit-icon {
+    display: block; /* Show the icon on hover */
+}
+
+.tm-text_input {
+    background-color: #f3f3f3; /* Default background color */
+    border: 1px solid #ccc;    /* Light gray border */
+    border-radius: 5px;        /* Rounded corners */
+    padding: 10px;             /* Padding for better input area */
+    width: 200px;              /* Set width */
+    height: 40px;              /* Set height */  
+    color: #099;        /* Font size */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+.text_input:focus {
+    background-color: #fff;    /* Change background color on focus */
+    border-color: #99c;        /* Change border color on focus */
+    outline: none;             /* Remove default outline */
+}
+
+.tm-textarea {
+    font-size: 1.7rem;               /* Match font size */
+    transition: all 0.3s ease;      /* Transition for hover effects */
+    border: 1px solid #ccc;         /* Optional: add border for better visibility */
+    border-radius: 4px;             /* Optional: rounded corners */
+    padding: 10px;                  /* Optional: padding for better spacing */
+    background-color: #fff;         /* Background color */
+}
+.tm-textarea:focus {
+    border-color: #0CC;            /* Border color on focus */
+    outline: none;                  /* Remove default outline */
+}
+
+.submit_button {
+    background-color: #f0f0f0; /* Default background color */
+    border: none;              /* No border */
+    border-radius: 5px;       /* Rounded corners */
+    margin: 5px;
+    padding: 5px 15px;       /* Padding for better clickable area */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+} 
+.submit_button:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+} 
+
+.tag_button-container {
+    display: flex;               /* Use flexbox for alignment */
+    flex-direction: row;      /* Stack buttons vertically */
+    align-items: center;                    /* Add space between the buttons */
+}
+
+
+
+.tag_submit_button {
+    display: flex;               /* Use flexbox for alignment */
+    justify-content: center;     /* Center content horizontally */
+    align-items: center;         /* Center content vertically */
+    background-color: #f3f3f3;   /* Background color */
+    border: 1px solid #ccc;     /* Border */
+    border-radius: 5px;         /* Rounded corners */
+    padding: 5px;               /* Add padding for clickable area */
+    cursor: pointer;             /* Pointer cursor on hover */
+    color: #099;                 /* Text color */
+    width: 40px;                /* Set width */
+    height: 40px;               /* Set height */
+    margin: 0;                  /* Remove margin to avoid extra space */
+}
+
+.tag_submit_button:hover {
+    background-color: #e0e0e0;   /* Slightly darker on hover */
+}

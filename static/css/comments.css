@@ -1,0 +1,94 @@
+.comment {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: 60px; /* To give enough space for the three dots */
+  }
+  
+  .comment-menu {
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 30px;   /* Slightly above the three dots */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px;
+    z-index: 100;
+  }
+  
+  .dropdown-menu button {
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 17px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu button:hover {
+    background-color: rgb(184, 179, 179);
+  }
+  .modal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center; 
+}
+
+.modal-message {
+  margin-bottom: 20px; /* Space between the message and buttons */
+}
+
+.btn-delete {
+  background-color: #dc2626; /* Red background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for better appearance */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  margin-right: 10px; 
+}
+
+.btn-delete:hover {
+    background-color: #b91c1c; /* Darker red on hover */
+}
+
+.btn-cancel {
+    background-color: #d1d5db; /* Gray background */
+    color: black; /* Black text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for better appearance */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+.btn-cancel:hover {
+    background-color: #9ca3af; /* Darker gray on hover */
+}

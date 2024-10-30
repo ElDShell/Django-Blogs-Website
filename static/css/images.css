@@ -1,0 +1,15 @@
+/* .image-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 500px; 
+    height: 200px; 
+    overflow: hidden; 
+    background-color: #fff; Set a background color
+}
+
+.fixed-image {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; This will show the whole image
+} */
