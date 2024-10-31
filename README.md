@@ -66,6 +66,7 @@ This is a Django-based blog website where users can create, edit, and delete blo
 6.   Run the development server:
     ```bash
     python manage.py runserver
+    ```
 7.    Access the application in the browser
     http://127.0.0.1:8000/.
 
